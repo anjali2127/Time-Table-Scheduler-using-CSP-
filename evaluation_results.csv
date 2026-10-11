@@ -1,0 +1,21 @@
+case,algorithm,solved,runs,avg_nodes,avg_backtracks,avg_time_sec,violations
+Easy,Plain backtracking,1,1,58,0,0.0,0
+Easy,Backtracking + MRV,1,1,58,0,0.0,0
+Easy,Backtracking + FC,1,1,30,0,0.0,0
+Easy,MRV + Degree + FC,1,1,30,0,0.0,0
+Easy,MRV + Degree + FC + LCV,1,1,30,0,0.1632,0
+Medium,Plain backtracking,1,1,226830,1505,2.674,0
+Medium,Backtracking + MRV,1,1,226830,1505,2.5779,0
+Medium,Backtracking + FC,1,1,120,0,0.1275,0
+Medium,MRV + Degree + FC,1,1,120,0,0.1302,0
+Medium,MRV + Degree + FC + LCV,0,1,12,0,3.1058,0
+Hard,Plain backtracking,0,1,239081,1319,3.0016,0
+Hard,Backtracking + MRV,0,1,186007,1025,3.0044,0
+Hard,Backtracking + FC,0,1,20800,7109,3.158,0
+Hard,MRV + Degree + FC,1,1,144,0,0.7119,0
+Hard,MRV + Degree + FC + LCV,0,1,2,0,4.1577,0
+Very Hard,Plain backtracking,0,1,79710,435,3.0016,0
+Very Hard,Backtracking + MRV,0,1,84863,465,3.0073,0
+Very Hard,Backtracking + FC,0,1,12520,2790,3.1412,0
+Very Hard,MRV + Degree + FC,1,1,144,0,0.6998,0
+Very Hard,MRV + Degree + FC + LCV,0,1,2,0,3.168,0

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Timetable Scheduler using CSP</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<header>
+  <h1>Time-Table Scheduler</h1>
+  <p>Constraint Satisfaction Problem &bull; Backtracking + Forward Checking</p>
+</header>
+
+<nav>
+  <button class="tab-btn active" data-tab="setup">1. Setup Data</button>
+  <button class="tab-btn" data-tab="generate">2. Generate</button>
+  <button class="tab-btn" data-tab="saved">3. Saved Timetables</button>
+</nav>
+
+<div id="message" class="message hidden"></div>
+
+<main>
+
+  <!-- ===================== TAB 1: SETUP ===================== -->
+  <section id="tab-setup" class="tab active">
+
+    <div class="toolbar">
+      <button id="btnSeed" class="btn secondary">Load Sample Data</button>
+      <span class="hint">Quick start: adds 5 teachers, 5 subjects, 2 rooms, 2 divisions.</span>
+    </div>
+
+    <div class="cards">
+
+      <div class="card">
+        <h2>Teachers</h2>
+        <div class="row">
+          <input id="teacherName" placeholder="e.g. Prof. A">
+          <button id="btnAddTeacher" class="btn">Add</button>
+        </div>
+        <ul id="teacherList" class="list"></ul>
+      </div>
+
+      <div class="card">
+        <h2>Rooms</h2>
+        <div class="row">
+          <input id="roomName" placeholder="e.g. R101">
+          <label class="check"><input type="checkbox" id="roomLab"> Lab</label>
+          <button id="btnAddRoom" class="btn">Add</button>
+        </div>
+        <ul id="roomList" class="list"></ul>
+      </div>
+
+      <div class="card">
+        <h2>Divisions</h2>
+        <div class="row">
+          <input id="divName" placeholder="e.g. CE-A">
+          <button id="btnAddDiv" class="btn">Add</button>
+        </div>
+        <ul id="divList" class="list"></ul>
+      </div>
+
+      <div class="card wide">
+        <h2>Subjects</h2>
+        <div class="row">
+          <input id="subName" placeholder="Subject name">
+          <select id="subTeacher"></select>
+          <input id="subLectures" type="number" min="1" max="5" value="3" title="Lectures per week">
+          <label class="check"><input type="checkbox" id="subLab"> Lab</label>
+          <button id="btnAddSub" class="btn">Add</button>
+        </div>
+        <ul id="subList" class="list"></ul>
+      </div>
+
+      <div class="card wide">
+        <h2>Teacher Unavailable Times</h2>
+        <div class="row">
+          <select id="avTeacher"></select>
+          <select id="avDay"></select>
+          <select id="avSlot"></select>
+          <button id="btnAddAv" class="btn">Add</button>
+        </div>
+        <ul id="avList" class="list"></ul>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===================== TAB 2: GENERATE ===================== -->
+  <section id="tab-generate" class="tab">
+    <div class="card">
+      <h2>Generate Timetable</h2>
+      <div class="row">
+        <input id="ttName" placeholder="Timetable name" value="My Timetable">
+        <select id="algoSelect">
+          <option value="fc">Backtracking + Forward Checking (recommended)</option>
+          <option value="plain">Plain Backtracking</option>
+        </select>
+        <label class="check"><input type="checkbox" id="shuffle" checked> Randomise</label>
+        <label class="check">Best of <input type="number" id="attempts" min="1" max="50" value="10"> tries</label>
+        <button id="btnGenerate" class="btn primary">Generate</button>
+      </div>
+      <div id="stats" class="stats hidden"></div>
+    </div>
+    <div id="resultArea"></div>
+  </section>
+
+  <!-- ===================== TAB 3: SAVED ===================== -->
+  <section id="tab-saved" class="tab">
+    <div class="card">
+      <h2>Saved Timetables</h2>
+      <ul id="savedList" class="list"></ul>
+    </div>
+    <div id="savedArea"></div>
+  </section>
+
+</main>
+
+<script src="/static/script.js"></script>
+</body>
+</html>
